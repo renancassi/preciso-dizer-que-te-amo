@@ -54,9 +54,9 @@ function randomizarFoto(numero) {
 
 const data = new Date("2025-02-10T21:24:00")
 
-// setInterval(() => {
-//     timer.innerHTML = calcularTempo(data);
-// }, 1000);
+setInterval(() => {
+    timer.innerHTML = calcularTempo(data);
+}, 1000);
 
 setInterval(() => {
     document.getElementById("foto").src = randomizarFoto(4);
