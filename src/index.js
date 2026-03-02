@@ -42,7 +42,7 @@ function calcularTempo(data) {
     const minutos = Math.floor((diferenca % horaMs) / minutoMs);
     const segundos = Math.floor((diferenca % minutoMs) / 1000);
 
-    return `${anos} anos, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+    return `${anos} ano, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
 }
 
 function randomizarFrase() {
