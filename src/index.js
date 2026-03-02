@@ -27,16 +27,20 @@ const frases = [
     "Meu bem, quero ser seu namorado - Várias queixas, Gilsons"
 ]
 
-
 function calcularTempo(data) {
     const agora = new Date();
-    const diferenca = agora - data; // Diferença em milissegundos
+    const diferenca = agora - data;
 
-    const anos = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 365));
-    const segundos = Math.floor(diferenca / 1000) % 60;
-    const minutos = Math.floor(diferenca / (1000 * 60)) % 60;
-    const horas = Math.floor(diferenca / (1000 * 60 * 60)) % 24;
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const anoMs = 1000 * 60 * 60 * 24 * 365;
+    const diaMs = 1000 * 60 * 60 * 24;
+    const horaMs = 1000 * 60 * 60;
+    const minutoMs = 1000 * 60;
+
+    const anos = Math.floor(diferenca / anoMs);
+    const dias = Math.floor((diferenca % anoMs) / diaMs);
+    const horas = Math.floor((diferenca % diaMs) / horaMs);
+    const minutos = Math.floor((diferenca % horaMs) / minutoMs);
+    const segundos = Math.floor((diferenca % minutoMs) / 1000);
 
     return `${anos} anos, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
 }
